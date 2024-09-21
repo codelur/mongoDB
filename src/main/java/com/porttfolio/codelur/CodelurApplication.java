@@ -13,8 +13,8 @@ import mongodb.mongoDB;
 public class CodelurApplication {
 
 	public static void main(String[] args) {
-		mongoDB mongo =  new mongoDB();
-		mongo.connect();
+		//mongoDB mongo =  new mongoDB();
+		//mongo.connect();
 		SpringApplication.run(CodelurApplication.class, args);
 		
 		
