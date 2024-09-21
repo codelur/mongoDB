@@ -24,7 +24,7 @@ public class MoviesController {
     // Get a customer by ID
     @GetMapping("/{id}")
     public Movies getCustomerById(@PathVariable String id) {
-        return MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Customer not found with id " + id));
+        return MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
     }
 
 }

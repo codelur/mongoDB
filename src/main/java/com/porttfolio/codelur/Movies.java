@@ -1,5 +1,7 @@
 package com.porttfolio.codelur;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,6 +13,9 @@ public class Movies {
     private String title;
     private String rated;
     private String type;
+    private List<String> genres;
+    private Object awards;
+    
 	public String getId() {
 		return id;
 	}
@@ -35,6 +40,19 @@ public class Movies {
 	public void setType(String type) {
 		this.type = type;
 	}
+	public List<String> getGenres() {
+		return genres;
+	}
+	public void setGenres(List<String> genres) {
+		this.genres = genres;
+	}
+	public Object getAwards() {
+		return awards;
+	}
+	public void setAwards(Object awards) {
+		this.awards = awards;
+	}
+	
 
     // Constructors, getters, and setters
     
