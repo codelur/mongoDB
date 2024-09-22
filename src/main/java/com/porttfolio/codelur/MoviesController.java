@@ -26,5 +26,12 @@ public class MoviesController {
     public Movies getCustomerById(@PathVariable String id) {
         return MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
     }
+    
+    @DeleteMapping("/delete/{id}")
+    public void deleteCustomerById(@PathVariable String id) {
+    	Movies movie = MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
+        MoviesRepository.delete(movie);
+    }
+    
 
 }
