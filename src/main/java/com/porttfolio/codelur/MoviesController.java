@@ -11,24 +11,24 @@ public class MoviesController {
 	
 	// Get all movies
     @GetMapping
-    public List<Movies> getAllCustomers() {
+    public List<Movies> getAllMovies() {
         return MoviesRepository.findAll();
     }
 
-    // Create a new customer
+    // Create a new movie
     @PostMapping
-    public Movies createCustomer(@RequestBody Movies customer) {
-        return MoviesRepository.save(customer);
+    public Movies createMovie(@RequestBody Movies movie) {
+        return MoviesRepository.save(movie);
     }
 
-    // Get a customer by ID
+    // Get a movie by ID
     @GetMapping("/{id}")
-    public Movies getCustomerById(@PathVariable String id) {
+    public Movies getMovieById(@PathVariable String id) {
         return MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
     }
     
     @DeleteMapping("/delete/{id}")
-    public void deleteCustomerById(@PathVariable String id) {
+    public void deleteMovierById(@PathVariable String id) {
     	Movies movie = MoviesRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Movie not found with id " + id));
         MoviesRepository.delete(movie);
     }
