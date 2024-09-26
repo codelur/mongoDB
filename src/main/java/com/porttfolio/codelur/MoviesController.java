@@ -15,7 +15,8 @@ public class MoviesController {
         return MoviesRepository.findAll();
     }
 
-    // Create a new movie
+    // Create a new movie using the object in JSON format from the body of the request
+    //It will automatically transform the JSON object to a Movie instance to save it in the mongoDB
     @PostMapping
     public Movies createMovie(@RequestBody Movies movie) {
         return MoviesRepository.save(movie);
